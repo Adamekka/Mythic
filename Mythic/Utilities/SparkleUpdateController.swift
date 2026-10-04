@@ -52,7 +52,8 @@ final class SparkleUpdateController: NSObject, SPUUserDriver, ObservableObject {
                 backgroundQueue.schedule(
                     after: .init(.now()),
                     interval: .seconds(60 * 60 * 6)
-                ) {
+                ) { @Sendable in
+                    // This background callback must not inherit MainActor isolation from the controller.
                     Task { @MainActor in
                         SparkleUpdateController.shared.checkForUpdates(userInitiated: false)
                     }
