@@ -7,15 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1217C8A92EADC525003EC8C9 /* SparkleUpdaterDownloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8A22EADC525003EC8C9 /* SparkleUpdaterDownloadingView.swift */; };
-		1217C8AA2EADC525003EC8C9 /* SparkleUpdaterSheetViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8A72EADC525003EC8C9 /* SparkleUpdaterSheetViewModifier.swift */; };
-		1217C8AB2EADC525003EC8C9 /* SparkleUpdaterFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8A42EADC525003EC8C9 /* SparkleUpdaterFinishView.swift */; };
-		1217C8AC2EADC525003EC8C9 /* SparkleUpdaterCheckingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8A12EADC525003EC8C9 /* SparkleUpdaterCheckingView.swift */; };
-		1217C8AD2EADC525003EC8C9 /* SparkleUpdaterExtractingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8A32EADC525003EC8C9 /* SparkleUpdaterExtractingView.swift */; };
-		1217C8AF2EADC525003EC8C9 /* SparkleUpdaterPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8A62EADC525003EC8C9 /* SparkleUpdaterPreviewView.swift */; };
 		1217C8B92EADC544003EC8C9 /* BundleIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8B02EADC544003EC8C9 /* BundleIconView.swift */; };
 		1217C8BA2EADC544003EC8C9 /* RichAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8B22EADC544003EC8C9 /* RichAlertView.swift */; };
-		1217C8C22EADC680003EC8C9 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1217C8C12EADC680003EC8C9 /* MarkdownUI */; };
 		1D4BF3BF2EEC595D00AD581F /* FileHandle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4BF3BE2EEC595900AD581F /* FileHandle+Extensions.swift */; };
 		5A62AE982C27DB1200BA31D2 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A62AE972C27DB1200BA31D2 /* GameListViewModel.swift */; };
 		6A0210162D390022009C85F8 /* HarmonyRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0210152D390016009C85F8 /* HarmonyRatingView.swift */; };
@@ -114,7 +107,6 @@
 		6AA4457B2EABBB3A0064A14F /* SemanticVersion+Codable(PropertyList).swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4457A2EABBB350064A14F /* SemanticVersion+Codable(PropertyList).swift */; };
 		6AACEF752C18846700258A7E /* exeIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6AACEF742C18846700258A7E /* exeIcon.icns */; };
 		6AAD31152B08693D0035FA69 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = 6AAD31142B08693D0035FA69 /* SemanticVersion */; };
-		6ABE9B902EC0F059002DBE82 /* SparkleUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE9B8F2EC0F059002DBE82 /* SparkleUpdateController.swift */; };
 		6ABEA9102ECB5895006F5182 /* GameOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABEA90F2ECB5895006F5182 /* GameOperationManager.swift */; };
 		6ABEA9122ECB5CF3006F5182 /* GameOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABEA9112ECB5CF3006F5182 /* GameOperation.swift */; };
 		6ABEA9142ECC2107006F5182 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABEA9132ECC2102006F5182 /* TimeInterval+Extensions.swift */; };
@@ -132,7 +124,6 @@
 		6AFB7CD22EDF154E00C53213 /* GameDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFB7CD12EDF154E00C53213 /* GameDataStore.swift */; };
 		6AFBCE1B2EBECFA700EF179D /* GameCard+ImageCard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBCE1A2EBECFA100EF179D /* GameCard+ImageCard+.swift */; };
 		6AFC027E2ABDB5D40004AB77 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 6AFC027D2ABDB5D40004AB77 /* SwiftyJSON */; };
-		6AFC02812ABE02970004AB77 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6AFC02802ABE02970004AB77 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -149,12 +140,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1217C8A12EADC525003EC8C9 /* SparkleUpdaterCheckingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterCheckingView.swift; sourceTree = "<group>"; };
-		1217C8A22EADC525003EC8C9 /* SparkleUpdaterDownloadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterDownloadingView.swift; sourceTree = "<group>"; };
-		1217C8A32EADC525003EC8C9 /* SparkleUpdaterExtractingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterExtractingView.swift; sourceTree = "<group>"; };
-		1217C8A42EADC525003EC8C9 /* SparkleUpdaterFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterFinishView.swift; sourceTree = "<group>"; };
-		1217C8A62EADC525003EC8C9 /* SparkleUpdaterPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterPreviewView.swift; sourceTree = "<group>"; };
-		1217C8A72EADC525003EC8C9 /* SparkleUpdaterSheetViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterSheetViewModifier.swift; sourceTree = "<group>"; };
 		1217C8B02EADC544003EC8C9 /* BundleIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIconView.swift; sourceTree = "<group>"; };
 		1217C8B22EADC544003EC8C9 /* RichAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichAlertView.swift; sourceTree = "<group>"; };
 		1D4BF3BE2EEC595900AD581F /* FileHandle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileHandle+Extensions.swift"; sourceTree = "<group>"; };
@@ -249,7 +234,6 @@
 		6AA4457A2EABBB350064A14F /* SemanticVersion+Codable(PropertyList).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SemanticVersion+Codable(PropertyList).swift"; sourceTree = "<group>"; };
 		6AACEF742C18846700258A7E /* exeIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = exeIcon.icns; sourceTree = "<group>"; };
 		6AB474952AACBBE900AB9C63 /* Mythic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mythic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ABE9B8F2EC0F059002DBE82 /* SparkleUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdateController.swift; sourceTree = "<group>"; };
 		6ABEA90F2ECB5895006F5182 /* GameOperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOperationManager.swift; sourceTree = "<group>"; };
 		6ABEA9112ECB5CF3006F5182 /* GameOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOperation.swift; sourceTree = "<group>"; };
 		6ABEA9132ECC2102006F5182 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
@@ -275,8 +259,6 @@
 				6AC742DD2B9314AB000EA1B2 /* SwordRPC in Frameworks */,
 				6A7A81162B77093600D19E32 /* ColorfulX in Frameworks */,
 				6A2961052CE1DD6200917E90 /* FirebaseCore in Frameworks */,
-				1217C8C22EADC680003EC8C9 /* MarkdownUI in Frameworks */,
-				6AFC02812ABE02970004AB77 /* Sparkle in Frameworks */,
 				6AFC027E2ABDB5D40004AB77 /* SwiftyJSON in Frameworks */,
 				6AA1744F2CD5CC290035B081 /* WhatsNewKit in Frameworks */,
 				6A8592CF2ED8047C00B339D8 /* DockProgress in Frameworks */,
@@ -291,19 +273,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1217C8A82EADC525003EC8C9 /* SparkleUpdater */ = {
-			isa = PBXGroup;
-			children = (
-				1217C8A72EADC525003EC8C9 /* SparkleUpdaterSheetViewModifier.swift */,
-				1217C8A12EADC525003EC8C9 /* SparkleUpdaterCheckingView.swift */,
-				1217C8A22EADC525003EC8C9 /* SparkleUpdaterDownloadingView.swift */,
-				1217C8A32EADC525003EC8C9 /* SparkleUpdaterExtractingView.swift */,
-				1217C8A42EADC525003EC8C9 /* SparkleUpdaterFinishView.swift */,
-				1217C8A62EADC525003EC8C9 /* SparkleUpdaterPreviewView.swift */,
-			);
-			path = SparkleUpdater;
-			sourceTree = "<group>";
-		};
 		1217C8B52EADC544003EC8C9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,7 +387,6 @@
 				6A2934C42BFCFAFD0035CE4B /* Wine */,
 				6A2934BB2BFCFAFD0035CE4B /* Extensions */,
 				6A2934C52BFCFAFD0035CE4B /* FileLocations.swift */,
-				6ABE9B8F2EC0F059002DBE82 /* SparkleUpdateController.swift */,
 				6A2934C62BFCFAFD0035CE4B /* Global.swift */,
 				6A6EE1862DBA650F00870AC4 /* Migrator.swift */,
 				6A2934C72BFCFAFD0035CE4B /* NetworkMonitor.swift */,
@@ -476,7 +444,6 @@
 			children = (
 				6A2934DA2BFCFAFD0035CE4B /* Navigation */,
 				6A8080D12EA35F2F00F10A00 /* Onboarding */,
-				1217C8A82EADC525003EC8C9 /* SparkleUpdater */,
 				6A2934EC2BFCFAFD0035CE4B /* Unified */,
 			);
 			path = Views;
@@ -658,7 +625,6 @@
 			name = Mythic;
 			packageProductDependencies = (
 				6AFC027D2ABDB5D40004AB77 /* SwiftyJSON */,
-				6AFC02802ABE02970004AB77 /* Sparkle */,
 				6AAD31142B08693D0035FA69 /* SemanticVersion */,
 				6A12FF8D2B73AC4E00AA948C /* Glur */,
 				6A7A81152B77093600D19E32 /* ColorfulX */,
@@ -668,7 +634,6 @@
 				6A2961022CE1DD6200917E90 /* FirebaseAnalytics */,
 				6A2961042CE1DD6200917E90 /* FirebaseCore */,
 				6A2961062CE1DD6200917E90 /* FirebaseCrashlytics */,
-				1217C8C12EADC680003EC8C9 /* MarkdownUI */,
 				6A8592CE2ED8047C00B339D8 /* DockProgress */,
 			);
 			productName = Mythic;
@@ -701,7 +666,6 @@
 			mainGroup = 6AB4748C2AACBBE900AB9C63;
 			packageReferences = (
 				6AFC027C2ABDB5D40004AB77 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				6AFC027F2ABE02970004AB77 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				6AAD31132B08693D0035FA69 /* XCRemoteSwiftPackageReference "SemanticVersion" */,
 				6A12FF8C2B73AC4E00AA948C /* XCRemoteSwiftPackageReference "Glur" */,
 				6A7A81142B77093600D19E32 /* XCRemoteSwiftPackageReference "ColorfulX" */,
@@ -709,7 +673,6 @@
 				6AC742DB2B9314AB000EA1B2 /* XCRemoteSwiftPackageReference "SwordRPC" */,
 				6AA1744D2CD5CC290035B081 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 				6A2961012CE1DD6200917E90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				1217C8C02EADC680003EC8C9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				6A8592CD2ED8047C00B339D8 /* XCRemoteSwiftPackageReference "DockProgress" */,
 			);
 			productRefGroup = 6AB474962AACBBE900AB9C63 /* Products */;
@@ -817,7 +780,6 @@
 				6A0688442C2BCE8B004DF10F /* OperationCard.swift in Sources */,
 				6A2935462BFCFAFD0035CE4B /* Rosetta.swift in Sources */,
 				6A0CB9852EAD0FDF00757AC5 /* SettingsView.swift in Sources */,
-				6ABE9B902EC0F059002DBE82 /* SparkleUpdateController.swift in Sources */,
 				6A2935532BFCFAFD0035CE4B /* StoreView.swift in Sources */,
 				6AA4457B2EABBB3A0064A14F /* SemanticVersion+Codable(PropertyList).swift in Sources */,
 				6A29355F2BFCFAFD0035CE4B /* EpicGamesGameUninstallationView.swift in Sources */,
@@ -867,14 +829,8 @@
 				6A0210162D390022009C85F8 /* HarmonyRatingView.swift in Sources */,
 				6A02101B2D390377009C85F8 /* StarRatingView.swift in Sources */,
 				1D4BF3BF2EEC595D00AD581F /* FileHandle+Extensions.swift in Sources */,
-				1217C8A92EADC525003EC8C9 /* SparkleUpdaterDownloadingView.swift in Sources */,
 				6A11928F2ECA15C9005A3E05 /* EpicGamesGameManager.swift in Sources */,
-				1217C8AA2EADC525003EC8C9 /* SparkleUpdaterSheetViewModifier.swift in Sources */,
 				6ADD21ED2EE3361000544E86 /* LocalGameUninstallationView.swift in Sources */,
-				1217C8AB2EADC525003EC8C9 /* SparkleUpdaterFinishView.swift in Sources */,
-				1217C8AC2EADC525003EC8C9 /* SparkleUpdaterCheckingView.swift in Sources */,
-				1217C8AD2EADC525003EC8C9 /* SparkleUpdaterExtractingView.swift in Sources */,
-				1217C8AF2EADC525003EC8C9 /* SparkleUpdaterPreviewView.swift in Sources */,
 				6A93CC872DFBB7510079A0B0 /* String+Extensions.swift in Sources */,
 				6A29354D2BFCFAFD0035CE4B /* AccountsView.swift in Sources */,
 				6ABEA9122ECB5CF3006F5182 /* GameOperation.swift in Sources */,
@@ -1150,14 +1106,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1217C8C02EADC680003EC8C9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.1;
-			};
-		};
 		6A12FF8C2B73AC4E00AA948C /* XCRemoteSwiftPackageReference "Glur" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/joogps/Glur";
@@ -1230,22 +1178,9 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		6AFC027F2ABE02970004AB77 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1217C8C12EADC680003EC8C9 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1217C8C02EADC680003EC8C9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
 		6A12FF8D2B73AC4E00AA948C /* Glur */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6A12FF8C2B73AC4E00AA948C /* XCRemoteSwiftPackageReference "Glur" */;
@@ -1300,11 +1235,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6AFC027C2ABDB5D40004AB77 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		6AFC02802ABE02970004AB77 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6AFC027F2ABE02970004AB77 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

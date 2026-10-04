@@ -17,7 +17,6 @@ import SemanticVersion
 struct ContentView: View {
     @EnvironmentObject var networkMonitor: NetworkMonitor
     
-    @ObservedObject private var updateController: SparkleUpdateController = .shared
     @Bindable private var operationManager: GameOperationManager = .shared
 
     @State private var appVersion: String = .init()
@@ -100,18 +99,6 @@ struct ContentView: View {
                 .padding(.bottom)
 #endif // DEBUG
 
-                switch updateController.state {
-                case .updateAvailable:
-                    updateBlock("Update Available", buttonText: "Show More") {
-                        updateController.checkForUpdates(userInitiated: true)
-                    }
-                case .readyToRelaunch(let acknowledgement):
-                    updateBlock("Update Ready", buttonText: "Relaunch") {
-                        acknowledgement(.update)
-                    }
-                default:
-                    EmptyView()
-                }
             }, detail: {
                 HomeView()
             }
@@ -125,24 +112,6 @@ struct ContentView: View {
                 }
             }
         }
-    }
-
-    @ViewBuilder
-    private func updateBlock(_ title: String, buttonText: String, action: @escaping () -> Void) -> some View {
-        VStack {
-            Label(title, systemImage: "info.circle")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
-
-            Button(action: action, label: {
-                Text(buttonText)
-                    .frame(maxWidth: .infinity)
-            })
-            .buttonStyle(.borderedProminent)
-            .clipShape(.capsule)
-        }
-        .padding(8)
-        .frame(maxWidth: .infinity)
     }
 }
 
