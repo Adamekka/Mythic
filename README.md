@@ -53,6 +53,7 @@ The original is saved beside it as `steamwebhelper.mythic-original.exe` and refr
 Steam launches with `-noverifyfiles` because its startup file check would undo the wrapper. Client updates stay enabled; if an update leaves the window black, close Steam and launch it again through Mythic.
 
 Building this fork requires `brew install mingw-w64`. Xcode compiles the Windows helper from `Support/SteamWebHelper/steamwebhelper.c` with Clang and bundles it automatically. The wrapper is adapted from [notpop's MIT-licensed Steam workaround](https://github.com/notpop/steam-on-m1-wine/tree/main/wrapper).
+Run the `Mythic` scheme's tests in Xcode with Command-U, or run `xcodebuild -project Mythic.xcodeproj -scheme Mythic -destination 'platform=macOS' test`. The hostless `MythicTests` target checks original preservation, wrapper upgrades, Steam updates, and preparation failures without launching the app or using real containers.
 
 Mythic uses the following Swift dependencies:
 

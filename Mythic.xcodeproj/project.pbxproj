@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A42C9BF1260000000000001A /* SteamWebHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C9BF12600000000000019 /* SteamWebHelperTests.swift */; };
+		A42C9BF1260000000000001B /* WineInterface+Steam.swift in Test Sources */ = {isa = PBXBuildFile; fileRef = A42C9BF12600000000000002 /* WineInterface+Steam.swift */; };
+		A42C9BF1260000000000001D /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C9BF1260000000000001C /* Wine.swift */; };
 		A42C9BF12600000000000001 /* WineInterface+Steam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C9BF12600000000000002 /* WineInterface+Steam.swift */; };
 		1217C8B92EADC544003EC8C9 /* BundleIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8B02EADC544003EC8C9 /* BundleIconView.swift */; };
 		1217C8BA2EADC544003EC8C9 /* RichAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1217C8B22EADC544003EC8C9 /* RichAlertView.swift */; };
@@ -141,6 +144,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A42C9BF12600000000000011 /* MythicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MythicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42C9BF12600000000000019 /* SteamWebHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamWebHelperTests.swift; sourceTree = "<group>"; };
+		A42C9BF1260000000000001C /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		A42C9BF12600000000000002 /* WineInterface+Steam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WineInterface+Steam.swift"; sourceTree = "<group>"; };
 		1217C8B02EADC544003EC8C9 /* BundleIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIconView.swift; sourceTree = "<group>"; };
 		1217C8B22EADC544003EC8C9 /* RichAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichAlertView.swift; sourceTree = "<group>"; };
@@ -254,6 +260,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A42C9BF12600000000000013 /* Test Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AB474922AACBBE900AB9C63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +287,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A42C9BF12600000000000018 /* MythicTests */ = {
+			isa = PBXGroup;
+			children = (
+				A42C9BF12600000000000019 /* SteamWebHelperTests.swift */,
+				A42C9BF1260000000000001C /* Wine.swift */,
+			);
+			path = MythicTests;
+			sourceTree = "<group>";
+		};
 		1217C8B52EADC544003EC8C9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +556,7 @@
 			isa = PBXGroup;
 			children = (
 				6A2934F72BFCFAFD0035CE4B /* Mythic */,
+				A42C9BF12600000000000018 /* MythicTests */,
 				6AB474962AACBBE900AB9C63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -543,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				6AB474952AACBBE900AB9C63 /* Mythic.app */,
+				A42C9BF12600000000000011 /* MythicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -610,6 +633,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A42C9BF12600000000000010 /* MythicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A42C9BF12600000000000015 /* Build configuration list for MythicTests */;
+			buildPhases = (
+				A42C9BF12600000000000012 /* Test Sources */,
+				A42C9BF12600000000000013 /* Test Frameworks */,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = MythicTests;
+			productName = MythicTests;
+			productReference = A42C9BF12600000000000011 /* MythicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6AB474942AACBBE900AB9C63 /* Mythic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AB474A42AACBBEA00AB9C63 /* Build configuration list for PBXNativeTarget "Mythic" */;
@@ -654,6 +691,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					A42C9BF12600000000000010 = {
+						CreatedOnToolsVersion = 27.1;
+					};
 					6AB474942AACBBE900AB9C63 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -683,6 +723,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A42C9BF12600000000000010 /* MythicTests */,
 				6AB474942AACBBE900AB9C63 /* Mythic */,
 			);
 		};
@@ -771,6 +812,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A42C9BF12600000000000012 /* Test Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A42C9BF1260000000000001A /* SteamWebHelperTests.swift in Sources */,
+				A42C9BF1260000000000001B /* WineInterface+Steam.swift in Test Sources */,
+				A42C9BF1260000000000001D /* Wine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AB474912AACBBE900AB9C63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -880,6 +931,50 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A42C9BF12600000000000016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.blackxfiied.MythicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		A42C9BF12600000000000017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.blackxfiied.MythicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
 		6AB474A22AACBBEA00AB9C63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1108,6 +1203,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A42C9BF12600000000000015 /* Build configuration list for MythicTests */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A42C9BF12600000000000016 /* Debug */,
+				A42C9BF12600000000000017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6AB474902AACBBE900AB9C63 /* Build configuration list for PBXProject "Mythic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
