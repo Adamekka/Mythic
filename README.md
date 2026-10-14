@@ -38,6 +38,22 @@ If you believe something's missing from the roadmap that we should add to the ap
   To verify your Mac's compatibility with Sonoma, visit https://support.apple.com/en-us/105113
 
 ## Dependencies
+
+### Wine for this fork
+
+Windows apps use the installed Wine Staging at `/Applications/Wine Staging.app`, so upgrades from the tap do not require changing Mythic's version settings.
+Install it with `brew install --cask adamekka/tap/wine@staging`; the tap also installs the GStreamer runtime for Windows video playback.
+Mythic Engine still supplies Winetricks and DXVK, and its existing update workflow remains available.
+The standard Wine runtime does not include Mythic Engine's MSync or D3DMetal optimizations.
+
+### Windows Steam
+
+Import Windows `steam.exe` as a local game. Mythic installs a browser-helper wrapper at launch that passes `--disable-gpu --single-process` directly to CEF to fix its black login window under Wine.
+The original is saved beside it as `steamwebhelper.mythic-original.exe` and refreshed when a Steam update replaces the helper.
+Steam launches with `-noverifyfiles` because its startup file check would undo the wrapper. Client updates stay enabled; if an update leaves the window black, close Steam and launch it again through Mythic.
+
+Building this fork requires `brew install mingw-w64`. Xcode compiles the Windows helper from `Support/SteamWebHelper/steamwebhelper.c` with Clang and bundles it automatically. The wrapper is adapted from [notpop's MIT-licensed Steam workaround](https://github.com/notpop/steam-on-m1-wine/tree/main/wrapper).
+
 Mythic uses the following Swift dependencies:
 
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) — The better way to deal with JSON data in Swift. 

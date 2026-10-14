@@ -545,7 +545,7 @@ final class Legendary {
                 // legendary requires this, since it calls wine directly.
                 environment["WINEPREFIX"] = containerURL.path(percentEncoded: false)
 
-                arguments += ["--wine", Engine.wineExecutableURL.path]
+                arguments += ["--wine", try Engine.wineExecutableURL.path]
             }
 
             arguments.append(contentsOf: game.launchArguments.map({ "'\($0)'" }))

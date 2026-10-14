@@ -20,7 +20,12 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
     internal static func retrieveVersion() -> SemanticVersion? {
         let process: Process = .init()
         process.arguments = ["--version"]
-        process.executableURL = Engine.directory.appending(path: "wine/bin/wine64")
+        do {
+            process.executableURL = try Engine.wineExecutableURL
+        } catch {
+            log.error("Unable to retrieve Wine version: \(error.localizedDescription)")
+            return nil
+        }
         
         let result = try? process.runWrapped()
         
@@ -90,8 +95,21 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
     
     /// Modify a process' properties to call `wine`.
     /// This will modify `executableURL`, and `environment`, and will passthrough existing values.
-    static func transformProcess(_ process: Process, containerURL: URL) {
-        process.executableURL = Engine.directory.appending(path: "wine/bin/wine64")
+    static func transformProcess(_ process: Process, containerURL: URL) throws {
+        process.executableURL = try Engine.wineExecutableURL
+
+        if var arguments = process.arguments, let executable = arguments.first,
+           URL(filePath: executable).lastPathComponent.lowercased() == "steam.exe" {
+            guard let wrapper = Bundle.main.url(forResource: "MythicSteamWebHelper", withExtension: "exe") else {
+                throw SteamWebHelper.PreparationError.invalidWrapper
+            }
+            try SteamWebHelper.prepare(at: URL(filePath: executable), wrapperURL: wrapper)
+            // Steam's startup check would replace the CEF workaround. Client updates remain enabled and are wrapped next launch.
+            if !arguments.contains("-noverifyfiles") {
+                arguments.append("-noverifyfiles")
+            }
+            process.arguments = arguments
+        }
         
         let capturedEnvironment = process.environment
         process.environment = constructEnvironment(with: containerURL, additionalVariables: capturedEnvironment ?? [:])
@@ -102,7 +120,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
         
         let process: Process = .init()
         process.arguments = ["tasklist"]
-        transformProcess(process, containerURL: containerURL)
+        try transformProcess(process, containerURL: containerURL)
         
         let commandResult = try await process.runWrapped()
         
@@ -141,7 +159,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
     static func boot(at containerURL: URL, parameters: BootParameter...) async throws -> Process.CommandResult {
         let process: Process = .init()
         process.arguments = ["wineboot"] + parameters.map(\.rawValue)
-        transformProcess(process, containerURL: containerURL)
+        try transformProcess(process, containerURL: containerURL)
         return try await process.runWrapped()
     }
 
@@ -251,7 +269,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
 
     static func killAll(at urls: URL...) throws {
         let process: Process = .init()
-        process.executableURL = Engine.directory.appending(path: "wine/bin/wineserver")
+        process.executableURL = try Engine.wineServerExecutableURL
         process.arguments = ["-k"]
 
         let urls: [URL] = urls.isEmpty ? .init(containerURLs) : urls
@@ -287,7 +305,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
 
         let process: Process = .init()
         process.arguments = ["reg", "add", key, "-v", name, "-t", type.rawValue, "-d", data, "-f"]
-        transformProcess(process, containerURL: containerURL)
+        try transformProcess(process, containerURL: containerURL)
         
         try process.run()
         
@@ -299,7 +317,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
     static func queryRegistryKey(containerURL: URL, key: String, name: String, type: RegistryType) async throws -> String {
         let process: Process = .init()
         process.arguments = ["reg", "query", key, "-v", name]
-        transformProcess(process, containerURL: containerURL)
+        try transformProcess(process, containerURL: containerURL)
         
         let commandResult = try await process.runWrapped()
 
@@ -347,7 +365,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
         do {
             let process: Process = .init()
             process.arguments = ["winecfg", "-v"]
-            transformProcess(process, containerURL: containerURL)
+            try transformProcess(process, containerURL: containerURL)
             
             let commandResult = try await process.runWrapped()
             
@@ -373,7 +391,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
         do {
             let process: Process = .init()
             process.arguments = ["winecfg", "-v", String(describing: version)]
-            transformProcess(process, containerURL: containerURL)
+            try transformProcess(process, containerURL: containerURL)
             
             try process.run()
             
@@ -451,8 +469,9 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
             }
         }
         
-        let wineBinDirectory = Engine.directory.appending(path: "wine/bin")
-        let wineLibDirectory = Engine.directory.appending(path: "wine/lib")
+        let wineDirectory = try Engine.wineDirectory
+        let wineBinDirectory = wineDirectory.appending(path: "bin")
+        let wineLibDirectory = wineDirectory.appending(path: "lib")
         
         // Get user's home directory and cache directory for winetricks
         let homeDirectory = FileManager.default.homeDirectoryForCurrentUser.path
@@ -466,9 +485,9 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
             "USER": NSUserName(),
             "XDG_CACHE_HOME": cacheDirectory,
             "WINEPREFIX": containerURL.path,
-            "WINE": Engine.wineExecutableURL.path,
-            "WINE64": Engine.wineExecutableURL.path,
-            "WINESERVER": wineBinDirectory.appending(path: "wineserver").path,
+            "WINE": try Engine.wineExecutableURL.path,
+            "WINE64": try Engine.wineExecutableURL.path,
+            "WINESERVER": try Engine.wineServerExecutableURL.path,
             "WINEARCH": "win64",
             "PATH": "\(wineBinDirectory.path):/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin",
             "DYLD_FALLBACK_LIBRARY_PATH": "\(wineLibDirectory.path):/usr/lib",

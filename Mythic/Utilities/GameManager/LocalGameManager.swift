@@ -92,7 +92,7 @@ class LocalGameManager {
                 let process: Process = .init()
                 process.arguments = [location.path] + game.launchArguments
                 process.environment = environment
-                Wine.transformProcess(process, containerURL: containerURL)
+                try Wine.transformProcess(process, containerURL: containerURL)
                 
                 try process.run()
                 

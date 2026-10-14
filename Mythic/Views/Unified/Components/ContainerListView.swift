@@ -537,7 +537,7 @@ struct ContainerConfigurationView: View {
                                 do {
                                     let process: Process = .init()
                                     process.arguments = [url.path]
-                                    Wine.transformProcess(process, containerURL: container.url)
+                                    try Wine.transformProcess(process, containerURL: container.url)
                                     
                                     try process.run()
                                     
@@ -574,7 +574,7 @@ struct ContainerConfigurationView: View {
                         Task {
                             let process: Process = .init()
                             process.arguments = ["uninstaller"]
-                            Wine.transformProcess(process, containerURL: container.url)
+                            try Wine.transformProcess(process, containerURL: container.url)
                             
                             try process.run()
                             
@@ -592,7 +592,7 @@ struct ContainerConfigurationView: View {
                         Task {
                             let process: Process = .init()
                             process.arguments = ["winecfg"]
-                            Wine.transformProcess(process, containerURL: container.url)
+                            try Wine.transformProcess(process, containerURL: container.url)
                             
                             try process.run()
 
@@ -610,7 +610,7 @@ struct ContainerConfigurationView: View {
                         Task {
                             let process: Process = .init()
                             process.arguments = ["regedit"]
-                            Wine.transformProcess(process, containerURL: container.url)
+                            try Wine.transformProcess(process, containerURL: container.url)
                             
                             try process.run()
 

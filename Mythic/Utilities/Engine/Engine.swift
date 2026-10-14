@@ -35,7 +35,26 @@ final class Engine {
     }
     
     static let directory = Bundle.appHome!.appending(path: "Engine")
-    static let wineExecutableURL = directory.appending(path: "wine/bin/wine64")
+    // Steam's current browser requires modern Wine; all clients must use its matching wineserver.
+    private static let wineBundleURL = URL(filePath: "/Applications/Wine Staging.app")
+
+    static var wineDirectory: URL {
+        get throws {
+            let directory = wineBundleURL.appending(path: "Contents/Resources/wine")
+            guard FileManager.default.isExecutableFile(atPath: directory.appending(path: "bin/wine").path),
+                  FileManager.default.isExecutableFile(atPath: directory.appending(path: "bin/wineserver").path)
+            else { throw WineNotInstalledError() }
+            return directory
+        }
+    }
+
+    static var wineExecutableURL: URL {
+        get throws { try wineDirectory.appending(path: "bin/wine") }
+    }
+
+    static var wineServerExecutableURL: URL {
+        get throws { try wineDirectory.appending(path: "bin/wineserver") }
+    }
     
     // TODO: use checksum to verify?
     // sum generated using `shasum` of the actual tarfile

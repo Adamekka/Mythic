@@ -27,6 +27,12 @@ extension Engine {
 }
 
 extension Engine {
+    struct WineNotInstalledError: LocalizedError {
+        var errorDescription: String? {
+            String(localized: "Install Wine Staging in Applications to run Windows apps.")
+        }
+    }
+
     struct NotInstalledError: LocalizedError {
         var errorDescription: String? = String(localized: "Mythic Engine is not installed.")
     }
